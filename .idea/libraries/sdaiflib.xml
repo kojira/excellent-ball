@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sdaiflib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/sdaiflib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
