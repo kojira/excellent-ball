@@ -15,3 +15,7 @@ Pure java の adb接続ライブラリ(https://github.com/cgutman/AdbLib )を使
 開発者モードをON、デバッグをONにして、端末とUSB接続し、
 adb tcpip 5555
 とコマンドを打って、adbをtcpipモードにしておく必要があります。
+
+・参考
+物理ボタンを押してモンスターボールを投げる方法
+http://qiita.com/kojira/items/ee81043bd9ad7c41ad4f
