@@ -17,5 +17,7 @@ adb tcpip 5555
 とコマンドを打って、adbをtcpipモードにしておく必要があります。
 
 ・参考
+
 物理ボタンを押してモンスターボールを投げる方法
+
 http://qiita.com/kojira/items/ee81043bd9ad7c41ad4f
