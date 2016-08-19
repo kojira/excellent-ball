@@ -114,7 +114,7 @@ public class PokeOverlayService extends Service {
             }
         }).start();
     }
-    
+
     public void connect() {
         new Thread(new Runnable() {
             @Override
@@ -217,7 +217,6 @@ public class PokeOverlayService extends Service {
     }
 
     BroadcastReceiver localReceiver = new BroadcastReceiver() {
-
         int buttonId = -1;
 
         @Override
