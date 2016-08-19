@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,21 +62,21 @@ public class PokeOverlayService extends Service {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                throwBall(0);
+                sendCommand(0);
             }
         });
         button = (Button) mOverlay.findViewById(R.id.buttonMiddle);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                throwBall(1);
+                sendCommand(1);
             }
         });
         button = (Button) mOverlay.findViewById(R.id.buttonLong);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                throwBall(2);
+                sendCommand(2);
             }
         });
 
@@ -86,13 +85,13 @@ public class PokeOverlayService extends Service {
         register();
     }
 
-    private void throwBall(final int distance) {
+    private void sendCommand(final int type) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     String command = null;
-                    switch (distance) {
+                    switch (type) {
                         case 0:
                             command = "/system/bin/input swipe 540 1700 540 820";
                             break;
@@ -115,16 +114,7 @@ public class PokeOverlayService extends Service {
             }
         }).start();
     }
-
-    public static AdbBase64 getBase64Impl() {
-        return new AdbBase64() {
-            @Override
-            public String encodeToString(byte[] arg0) {
-                return Base64.encodeToString(arg0, arg0.length);
-            }
-        };
-    }
-
+    
     public void connect() {
         new Thread(new Runnable() {
             @Override
@@ -238,13 +228,13 @@ public class PokeOverlayService extends Service {
                 default:
                     break;
                 case 2://Single Click
-                    throwBall(0);
+                    sendCommand(0);
                     break;
                 case 4://Double Click
-                    throwBall(1);
+                    sendCommand(1);
                     break;
                 case 7://Long Click
-                    throwBall(2);
+                    sendCommand(2);
                     break;
             }
         }
